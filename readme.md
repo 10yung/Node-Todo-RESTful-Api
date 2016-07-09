@@ -32,8 +32,10 @@ It is RESTful Api so there are HTTP Methods corresponding to the above features.
 * apiController.js : control all HTTP Methods function and how to interact with database.
 * setupController.js : seed database make sample data into database by endpoint.
 * app.js : application entrance file.
-> note: I haven't added any view (UI) yet, so I use controller to interact with database not model.
-Usually I will let model to interact with database and let controller to bind the result of data and view together.
+
+Note:
+> I haven't added any view (UI) yet, so I use controller to interact with database not model.
+> Usually I will let model to interact with database and let controller to bind the result of data and view together.
 
 ## Summary ##
 This side project is to show express app structure ( concept ) and how to design RESTful Api.
