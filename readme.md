@@ -42,15 +42,15 @@ To interact with this Api. You should type URL endpoint to call function.
 **Here are URL endpoint :**
 * **GET** ```http://localhost:3000/api/setupTodos```  -> seed datbase
 
-* **GET** ```http://localhost:3000/api/todos/:username```  -> show all <username> todos
+* **GET** ```http://localhost:3000/api/todos/:username```  -> show all <:username> todos
 > ```http://localhost:3000/api/todos/andy``` then show all andy todos
 
 * **GET** ```http://localhost:3000/api/todos/:id```  -> show current <:id> todo
 
 * **POST** ```http://localhost:3000/api/todo```  -> add and update todo to default user. (In this case I set default user to **test**)
-> you have to post {todo": "buy a bottle of eater",
+> you have to post { todo": "buy a bottle of eater",
     "isDone": "false",
-    "hasAttachment": "false"} as a new todo
+    "hasAttachment": "false" } as a new todo
 
 * **DELETE** ```http://localhost:3000/api/todo```  -> delete current <:id> todo.
 > you have to use { "id": "<:todoid>"} to delete todo with that id
