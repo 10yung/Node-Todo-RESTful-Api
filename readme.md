@@ -37,5 +37,22 @@ Note:
 > I haven't added any view (UI) yet, so I use controller to interact with database not model.
 > Usually I will let model to interact with database and let controller to bind the result of data and view together.
 
+## How to use ##
+To interact with this Api. You should type URL endpoint to call function.
+**Here are URL endpoint :**
+**GET** ```http://localhost:3000/api/setupTodos```  -> seed datbase
+
+**GET** ```http://localhost:3000/api/todos/:username```  -> show all <username> todos
+> ```http://localhost:3000/api/todos/andy``` then show all andy todos
+
+**GET** ```http://localhost:3000/api/todos/:id```  -> show current <:id> todo
+
+**POST** ```http://localhost:3000/api/todo```  -> add and update todo to default user. (In this case I set default user to **test**)
+
+**DELETE** ```http://localhost:3000/api/todo```  -> delete current <:id> todo.
+> you have to use { "id": "<:todoid>"} to delete todo with that id
+
+Note: [Postman](https://www.getpostman.com/) is a awesome tool to test this kind of api
+
 ## Summary ##
 This side project is to show express app structure ( concept ) and how to design RESTful Api.
