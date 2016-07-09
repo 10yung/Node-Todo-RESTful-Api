@@ -45,7 +45,7 @@ To interact with this Api. You should type URL endpoint to call function.
 * **GET** ```http://localhost:3000/api/todos/:username```  -> show all <:username> todos
 > ```http://localhost:3000/api/todos/andy``` then show all andy todos
 
-* **GET** ```http://localhost:3000/api/todos/:id```  -> show current <:id> todo
+* **GET** ```http://localhost:3000/api/todo/:id```  -> show current <:id> todo
 
 * **POST** ```http://localhost:3000/api/todo```  -> add and update todo to default user. (In this case I set default user to **test**)
 > you have to post { todo": "buy a bottle of eater",
