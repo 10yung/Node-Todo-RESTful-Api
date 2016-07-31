@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 var todoSchema = new Schema({
+    id: Number,
     username: String,
     todo: String,
     isDone: Boolean,

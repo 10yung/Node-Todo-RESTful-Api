@@ -17,10 +17,13 @@ module.exports = function(app){
 
     // get current todo
     app.get('/api/todo/:id', function(req, res){
-        Todos.findById({ _id : req.params.id }, function(err, todo){
+
+        // mongo default generated ID
+        Todos.find( {$or: [{ _id : req.params.id }]}, function(err, todo){
             if (err) throw err;
             res.send(todo);
         });
+
     });
 
     app.post('/api/todo', function(req, res){
