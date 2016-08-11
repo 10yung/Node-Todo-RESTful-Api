@@ -1,5 +1,5 @@
 var Todos = require('../models/todoModel');
-var Users = require('../models/userModel');
+var User = require('../models/userModel');
 var bodyParser = require('body-parser');
 var _ = require('underscore');
 
@@ -11,7 +11,7 @@ module.exports = function(app) {
     }));
 
     // register a new user
-    app.post('/user', function(req, res) {
+    app.post('/user/register', function(req, res) {
 
         // pick the right key to storage
         var body = _.pick(req.body, 'username', 'email', 'password');
@@ -19,7 +19,7 @@ module.exports = function(app) {
         if (!_.isString(body.username) || !_.isString(body.password) || body.password.trim().length === 0) {
             return res.status(400).send('Oops! Something wrong happened. Todo is not saved');
         } else {
-            var newUser = Users({
+            var newUser = User({
                 username: body.username,
                 email: body.email,
                 password: body.password
@@ -33,9 +33,28 @@ module.exports = function(app) {
                 res.send('Save User Success')
             });
         }
+    });
 
+    app.post('/user/login', function(req, res) {
+        var body = _.pick(req.body, 'username', 'password');
 
-    })
+        User.findOne({ username: body.username }, function (err, user) {
+            if (err) throw err;
+
+            user.comparePassword(body.password, function (err, isMatch) {
+                if (err) {
+                    throw error
+                } else if (isMatch) {
+                    res.send('Pass!');
+                } else {
+                    res.send('Ooh! Wrong password!');
+                }
+
+            });
+
+        });
+
+    });
 
     // get all todos
     app.get('/api/todos', function(req, res) {
