@@ -3,12 +3,20 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var todoSchema = new Schema({
     id: Number,
-    username: String,
-    todo: String,
-    isDone: Boolean,
+    username: {
+        type: String,
+        required: true
+    },
+    todo: {
+        type: String,
+        required: true
+    },
+    isDone: {
+        type: Boolean,
+        required: true
+    },
     hasAttachment: Boolean
 });
 
-var Todos = mongoose.model('Todos', todoSchema);
 
-module.exports = Todos;
+module.exports = mongoose.model('todolists', todoSchema);

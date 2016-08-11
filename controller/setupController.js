@@ -8,28 +8,28 @@ module.exports = function(app){
         var starterTodos = [
             {
                 id: 1,
-                username: 'andytest',
+                username: 'andy',
                 todo: 'Buy a cup of coffee',
                 isDone: false,
                 hasAttachment: false
             },
             {
                 id: 2,
-                username: 'nickytest',
+                username: 'nicky',
                 todo: 'feed dog',
                 isDone: false,
                 hasAttachment: false
             },
             {
                 id: 3,
-                username: 'faithtest',
+                username: 'faith',
                 todo: 'go swimming',
                 isDone: false,
                 hasAttachment: false
             },
             {
                 id: 4,
-                username: 'andytest',
+                username: 'andy',
                 todo: 'go hiking',
                 isDone: false,
                 hasAttachment: false

@@ -9,9 +9,9 @@ var port = process.env.PORT || 3000;
 
 app.use('/assets', express.static('public'));
 
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
 
-mongoose.connect(config.getDbConnectionString());
+mongoose.connect(config.getLocalDbConnectionString());
 setupController(app);
 apiController(app);
 
